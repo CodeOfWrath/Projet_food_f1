@@ -27,7 +27,7 @@ Application Flutter multi-écrans (thème recettes) démontrant :
 
 ```bash
 # Cloner le repo
-git clone https://github.com/ton-compte/flutter-multi-screen-app.git
+git clone https://github.com/CodeOfWrath/film.git
 cd flutter-multi-screen-app
 
 # Installer les dépendances
