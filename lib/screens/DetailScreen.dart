@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/CustomCard.dart';
+import 'package:film/util/data.dart';
 
 class DetailScreen extends StatelessWidget {
   final String id;
@@ -7,12 +7,29 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final recipe = recipes[int.parse(id)];
+
     return Scaffold(
       appBar: AppBar(title: Text("Détail")),
       body: Center(
-        child: CustomCard(
-          title: "Recette n° $id",
-          content: "Description de la recette sélectionnée.",
+        child: Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            Image.asset(
+              'assets/food.jpg', // image générique
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: 300,
+            ),
+            Container(
+              color: Colors.black54,
+              padding: EdgeInsets.all(16),
+              child: Text(
+                recipe,
+                style: TextStyle(color: Colors.white, fontSize: 24),
+              ),
+            ),
+          ],
         ),
       ),
     );
